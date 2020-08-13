@@ -12,12 +12,15 @@ class App extends React.Component {
   }
   componentDidMount() {
     console.log("CDM running");
-    axios.get("https://api.github.com/users/Anthony-Brat").then((res) => {
-      this.setState({ user: res.data.message });
-      console.log(this.state);
-    });
+    axios
+      .get("https://api.github.com/users/Anthony-Brat")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   }
   render() {
+    console.log("Render");
     return (
       <div className="App">
         <h1>react user github</h1>
